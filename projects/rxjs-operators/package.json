@@ -1,0 +1,10 @@
+{
+  "name": "@hellish/rxjs-operators",
+  "version": "1.0.1",
+  "peerDependencies": {
+    "rxjs": "^6.0.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^1.17.0"
+  }
+}
