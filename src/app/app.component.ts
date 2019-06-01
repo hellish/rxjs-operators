@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { randomElement } from 'rxjs-operators';
+import { randomElement, randomElements } from 'npx-rxjs-operators';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,14 @@ export class AppComponent implements OnInit {
             randomElement(),
             take(1),
         ).subscribe(result => {
-            console.log('result', result);
+            console.log('randomElement result', result);
+        });
+
+        new BehaviorSubject([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]).pipe(
+            randomElements(6),
+            take(1),
+        ).subscribe(result => {
+            console.log('randomElements result', result);
         });
     }
 

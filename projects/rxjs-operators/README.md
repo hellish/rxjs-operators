@@ -1,24 +1,47 @@
-# RxjsOperators
+# RxJS operators
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+## Install
+```javascript
+npm install npx-rxjs-operators
+```
 
-## Code scaffolding
+## Usage
+```typescript
+import { randomElement } from 'npx-rxjs-operators';
+```
 
-Run `ng generate component component-name --project rxjs-operators` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project rxjs-operators`.
-> Note: Don't forget to add `--project rxjs-operators` or else it will be added to the default project in your `angular.json` file. 
+## Operators
 
-## Build
+### randomElement
+----------------
+Get a single random element from the array
 
-Run `ng build rxjs-operators` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+import { randomElement } from 'npx-rxjs-operators';
 
-## Publishing
+const subject = new BehaviorSubject([ 1, 2, 3, ]).pipe(
+    randomElement(),
+    take(1),
+);
 
-After building your library with `ng build rxjs-operators`, go to the dist folder `cd dist/rxjs-operators` and run `npm publish`.
+subject.subscribe(value => {
+    // value can be 1 or 2 or 3 ...
+});
+```
 
-## Running unit tests
+### randomElements
+----------------
+Get an array with from the array
 
-Run `ng test rxjs-operators` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import { randomElements } from 'npx-rxjs-operators';
 
-## Further help
+const subject = new BehaviorSubject([ 5, 6, 7, 8, ]).pipe(
+    randomElements(2),
+    take(1),
+);
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+subject.subscribe(value => {
+    // value can be [ 5, 6 ] or [ 5, 7 ] or [ 8, 6 ] ...
+});
+```

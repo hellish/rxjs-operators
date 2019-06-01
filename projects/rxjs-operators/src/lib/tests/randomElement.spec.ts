@@ -3,7 +3,7 @@ import { take } from 'rxjs/operators';
 
 import { randomElement } from '../operators/randomElement';
 
-describe('operators', () => {
+describe('randomElement', () => {
 
     it('should return a single random element', (done) => {
         const value = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
@@ -11,7 +11,7 @@ describe('operators', () => {
             randomElement(),
             take(1),
         ).subscribe(result => {
-            expect(value.indexOf(result) > -1);
+            expect(value.indexOf(result)).toBeGreaterThan(-1);
             done();
         });
     });

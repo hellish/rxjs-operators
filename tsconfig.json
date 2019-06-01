@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "rxjs-operators": [
+      "npx-rxjs-operators": [
         "dist/rxjs-operators"
       ],
-      "rxjs-operators/*": [
+      "npx-rxjs-operators/*": [
         "dist/rxjs-operators/*"
       ]
     }
