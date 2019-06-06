@@ -1,5 +1,7 @@
 # RxJS operators
 
+[![Build Status](https://travis-ci.org/hellish/rxjs-operators.svg?branch=master)](https://travis-ci.org/hellish/rxjs-operators)
+
 ## Install
 ```javascript
 npm install npx-rxjs-operators
