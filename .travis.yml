@@ -1,1 +1,6 @@
 language: node_js
+node_js:
+  - "10"
+before_script:
+  - npm install -g @angular/cli@7
+script: ng test npx-operators
